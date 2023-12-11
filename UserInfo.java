@@ -43,8 +43,8 @@ public class UserInfo {
         System.out.print("Enter your ID: ");
         this.id = s.nextLine();
 
-        while (this.id.length() != 8) {
-            System.out.print("Enter your ID: ");
+        while (this.id.length() != 9) {
+            System.out.print("Enter Valid ID: ");
             id = s.nextLine();
         }
 
@@ -52,7 +52,7 @@ public class UserInfo {
         this.ccNumber = s.nextLine();
 
         while (this.ccNumber.length() != 16) {
-            System.out.print("Enter Credit Card Number: ");
+            System.out.print("Enter Valid Credit Card Number: ");
             this.ccNumber = s.nextLine();
         }
 
@@ -60,15 +60,25 @@ public class UserInfo {
         this.numsBehind = s.nextLine();
 
         while (this.numsBehind.length() != 3) {
-            System.out.print("Enter 3 numbers of the CC: ");
+            System.out.print("Enter Valid 3 numbers of the CC: ");
             this.numsBehind = s.nextLine();
         }
 
         System.out.print("Enter Name: ");
         this.name = s.nextLine();
 
+        while (this.name.isEmpty() == true) {
+            System.out.println("Enter Name: ");
+            this.name = s.nextLine();
+        }
+
         System.out.print("Enter Surname: ");
         this.surname = s.nextLine();
+
+        while (this.surname.isEmpty() == true) {
+            System.out.println("Enter Surname: ");
+            this.surname = s.nextLine();
+        }
 
         System.out.print("Enter Email: ");
         this.email = s.nextLine();
