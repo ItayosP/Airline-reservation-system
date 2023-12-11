@@ -16,7 +16,7 @@ public class Main {
             System.out.println("We start right away");
             UserInfo info = new UserInfo();
 
-            
+            System.out.println("Hello "+info.getName()+" "+info.getSurname());
 
         } else {
             System.out.println("You cant do that.. Return");

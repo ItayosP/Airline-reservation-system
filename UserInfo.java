@@ -1,24 +1,24 @@
 import java.util.Scanner;
 
 public class UserInfo {
-    private int id;
-    private long ccNumber;
-    private int numsBehind;
+    private String numsBehind;
+    private String id;
+    private String ccNumber;
     private String name;
     private String surname;
     private String email;
     private String address;
 
-    public int getId() {
-        return this.id;
-    }
-
-    public long getCcNumber() {
+    public String getCcNumber() {
         return this.ccNumber;
     }
 
-    public int getNumsBehind() {
+    public String getNumsBehind() {
         return this.numsBehind;
+    }
+
+    public String getId() {
+        return this.id;
     }
 
     public String getName() {
@@ -41,15 +41,28 @@ public class UserInfo {
         Scanner s = new Scanner(System.in);
 
         System.out.print("Enter your ID: ");
-        this.id = s.nextInt();
+        this.id = s.nextLine();
+
+        while (this.id.length() != 8) {
+            System.out.print("Enter your ID: ");
+            id = s.nextLine();
+        }
 
         System.out.print("Enter Credit Card Number: ");
-        this.ccNumber = s.nextLong();
+        this.ccNumber = s.nextLine();
+
+        while (this.ccNumber.length() != 16) {
+            System.out.print("Enter Credit Card Number: ");
+            this.ccNumber = s.nextLine();
+        }
 
         System.out.print("Enter 3 numbers of the CC: ");
-        this.numsBehind = s.nextInt();
+        this.numsBehind = s.nextLine();
 
-        s.nextLine(); // Consume newline
+        while (this.numsBehind.length() != 3) {
+            System.out.print("Enter 3 numbers of the CC: ");
+            this.numsBehind = s.nextLine();
+        }
 
         System.out.print("Enter Name: ");
         this.name = s.nextLine();
@@ -59,6 +72,11 @@ public class UserInfo {
 
         System.out.print("Enter Email: ");
         this.email = s.nextLine();
+
+        while (!this.email.endsWith("@gmail.com")) {
+            System.out.print("Enter Email: ");
+            this.email = s.nextLine();
+        }
 
         System.out.print("Enter Address: ");
         this.address = s.nextLine();
