@@ -1,0 +1,9 @@
+[1] -> Get personal info
+
+[2] -> Order ticket
+
+[3] -> Choose seat (Economy, Premium Economy, Business, First class)
+
+[4] -> Get Price
+
+[5] -> Save everything in a file
