@@ -90,7 +90,5 @@ public class UserInfo {
 
         System.out.print("Enter Address: ");
         this.address = s.nextLine();
-
-        s.close();
     }
 }
