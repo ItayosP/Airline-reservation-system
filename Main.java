@@ -29,55 +29,20 @@ public class Main {
 
             System.out.println("Where do you want to fly?");
 
-            System.out.println("\n[1] -> France\n[2] -> Mexico\n[3] -> Spain\n[4] -> Turkiye\n[5] -> Italy\n[6] -> United States\n[7] -> Greece\n[8] -> Austria\n[9] -> Germany\n[10] -> United Arab Emirates");
+            String[] countries = {"France", "Mexico", "Spain", "Turkiy", "Italy", "United States", "Greece", "Austria", "Germany", "United Arab Emirates"};
 
-            String country = s.nextLine();
-
-            switch (country) {
-                case "1":
-                    System.out.println("You chose France, Flight takes off at: " + r.nextInt(1, 31) + "/" + r.nextInt(1, 12));
-
-                    break;
-                case "2":
-                    System.out.println("You chose Mexico, Flight takes off at: " + r.nextInt(1, 31) + "/" + r.nextInt(1, 12));
-
-                    break;
-                case "3":
-                    System.out.println("You chose Spain, Flight takes off at: " + r.nextInt(1, 31) + "/" + r.nextInt(1, 12));
-
-                    break;
-                case "4":
-                    System.out.println("You chose Turkiye, Flight takes off at: " + r.nextInt(1, 31) + "/" + r.nextInt(1, 12));
-
-                    break;
-                case "5":
-                    System.out.println("You chose Italy, Flight takes off at: " + r.nextInt(1, 31) + "/" + r.nextInt(1, 12));
-
-                    break;
-                case "6":
-                    System.out.println("You chose United States, Flight takes off at: " + r.nextInt(1, 31) + "/" + r.nextInt(1, 12));
-
-                    break;
-                case "7":
-                    System.out.println("You chose Greece, Flight takes off at: " + r.nextInt(1, 31) + "/" + r.nextInt(1, 12));
-
-                    break;
-                case "8":
-                    System.out.println("You chose Austria, Flight takes off at: " + r.nextInt(1, 31) + "/" + r.nextInt(1, 12));
-
-                    break;
-                case "9":
-                    System.out.println("You chose Germany, Flight takes off at: " + r.nextInt(1, 31) + "/" + r.nextInt(1, 12));
-
-                    break;
-                case "10":
-                    System.out.println("You chose United Arab Emirates, Flight takes off at: " + r.nextInt(1, 31) + "/" + r.nextInt(1, 12));
-
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please select a number between 1 and 10.");
-                    break;
+            for (int i=0; i<countries.length; i++) {
+                System.out.println("[" + (i + 1) + "] -> " + countries[i]);
             }
+
+            int country = s.nextInt();
+
+            while (country<=0 || country>=countries.length) {
+                System.out.println("Enter valid country number.");
+                country = s.nextInt()-1;
+            }
+
+
 
             System.out.println("Choose seat: ");
             System.out.println("[1] -> Economy [0$]\n [2] -> Premium Economy[50$]\n [3] -> Business class[100$]\n [4] -> First class[200$]");
