@@ -42,6 +42,8 @@ public class Main {
                 country = s.nextInt()-1;
             }
 
+            System.out.println("You chose " + countries[country] + ", Flight takes off at: " +  + r.nextInt(1, 31) + "/" + r.nextInt(1, 12));
+
 
 
             System.out.println("Choose seat: ");
